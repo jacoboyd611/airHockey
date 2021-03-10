@@ -202,59 +202,7 @@ namespace airHockey
             else if (closeWallBottom.IntersectsWith(ballRec)) { ballXSpeed *= -1; }
 
             #region player detection
-            if (player1Rec.IntersectsWith(ballRec))
-            {
-                if (ballY > paddle1Y + paddleHeight )
-                {
-                    ballYSpeed *= -1;
-                    ballY = paddle1Y + paddleHeight + 1;
-                }
-                if (ballY < paddle1Y)
-                {
-                    ballYSpeed *= -1;
-                    ballY = paddle1Y - 1;
-                }
-                else if (ballY > paddle1Y && ballY < paddle1Y + paddleHeight)
-                {
-                    if (ballX < paddle1X)
-                    {
-                        ballXSpeed *= -1;
-                        ballX = paddle1X - 1;
-                    }
-                    else if (ballX > paddle1X + paddleWidth)
-                    {
-                        ballXSpeed *= -1;
-                        ballX = paddle1X + paddleWidth + 1;
-                    }
-                }
-            }
 
-            if (player2Rec.IntersectsWith(ballRec))
-            {
-                if (ballY > paddle2Y + paddleHeight)
-                {
-                    ballYSpeed *= -1;
-                    ballY = paddle2Y + paddleHeight + 1;
-                }
-                if (ballY < paddle2Y)
-                {
-                    ballYSpeed *= -1;
-                    ballY = paddle2Y - 1;
-                }
-                if (ballY > paddle2Y && ballY < paddle1Y + paddleHeight)
-                {
-                    if (ballX < paddle2X)
-                    {
-                        ballXSpeed *= -1;
-                        ballX = paddle2X - 1;
-                    }
-                    else if (ballX > paddle2X + paddleWidth)
-                    {
-                        ballXSpeed *= -1;
-                        ballX = paddle2X + paddleWidth + 1;
-                    }
-                }
-            }
             #endregion
 
             //Check for goal
